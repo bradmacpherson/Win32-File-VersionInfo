@@ -1,5 +1,10 @@
 Revision history for Perl extension Win32::File::VersionInfo.
 
+0.07  Fri May 13 19:08:00 2016
+        - Changed Makefile.PL to copy the VersionInfo.xs file out of the xs
+          directory rather than messing with XS to try and compile it - since
+          that doesn't work!
+        - Ran perltidy over everything.
         - Changed README to Markdown (README.md)
         - Added Travis build status to README.md
 

@@ -9,15 +9,15 @@ use Carp;
 
 our @ISA = qw(Exporter);
 
-our @EXPORT = qw( GetFileVersionInfo );
+our @EXPORT    = qw( GetFileVersionInfo );
 our @EXPORT_OK = qw(  );
 
-our $VERSION = '0.06';
-if ($^O =~ /cygwin|MSWin32/) {
-  XSLoader::load('Win32::File::VersionInfo', $VERSION);
+our $VERSION = '0.07';
+if ( $^O =~ /cygwin|MSWin32/ ) {
+    XSLoader::load( 'Win32::File::VersionInfo', $VERSION );
 }
 else {
-  croak "Win32::File::VersionInfo only works on Cygwin and MS Windows.";
+    croak "Win32::File::VersionInfo only works on Cygwin and MS Windows.";
 }
 
 1;

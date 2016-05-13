@@ -1,4 +1,4 @@
-Win32-File-VersionInfo version 0.06
+Win32-File-VersionInfo version 0.07
 ===========================
 
 This module lets you read the version information resource from files 
