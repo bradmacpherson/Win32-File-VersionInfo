@@ -1,4 +1,4 @@
-Win32-File-VersionInfo version 0.03
+Win32-File-VersionInfo version 0.06
 ===========================
 
 This module lets you read the version information resource from files 
@@ -23,11 +23,15 @@ DEPENDENCIES
 
 The perl module itself has no dependencies. The XS depends on winver.h 
 and version.lib (included with MS Visual C++ and/or the MS Platform SDK).
-As the name implies, this module is only ever meaningful on Win32.
+As the name implies, this module is only ever meaningful on Win32. The module
+will install and test OK on non-Win32 systems; using it there will result
+in the module croaking.
 
 COPYRIGHT AND LICENCE
 
 Copyright (C) 2003 Alexey Toptygin <alexeyt@cpan.org>
+
+Ongoing maintenance (C) 2016 Brad Macpherson <brad@cpan.org>
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself. 

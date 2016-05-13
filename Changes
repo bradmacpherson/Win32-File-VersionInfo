@@ -1,5 +1,13 @@
 Revision history for Perl extension Win32::File::VersionInfo.
 
+0.06  Fri May 13 09:06:00 2016
+        - Moved XS component out of the root, added conditional compilation
+          to avoid build failures on non-Win32 systems.
+        - Modified module to throw exception on non-Win32 systems (since the 
+          API won't be there).
+        - Updated tests to pass on non-Win32 systems, checking that the exception
+          is being thrown.
+
 0.05  Tue Oct 22 17:43:00 2013
 	- Documentation fix (should have done this as part of 0.04...)
 	  https://rt.cpan.org/Public/Bug/Display.html?id=27098

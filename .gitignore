@@ -1,3 +1,5 @@
+### https://raw.github.com/github/gitignore/785fcb765a09e0800b9133e64a79fe60c6a205ab/Perl.gitignore
+
 /blib/
 /.build/
 _build/
@@ -17,3 +19,20 @@ nytprof.out
 /pm_to_blib
 *.o
 *.bs
+/_eumm/
+
+
+### https://raw.github.com/github/gitignore/785fcb765a09e0800b9133e64a79fe60c6a205ab/Global/Vim.gitignore
+
+# swap
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+# session
+Session.vim
+# temporary
+.netrwhist
+*~
+# auto-generated tag files
+tags
+
+

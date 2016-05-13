@@ -1,7 +1,12 @@
 Changes
+LICENSE
+Makefile
 Makefile.PL
-MANIFEST
+MANIFEST			This list of files
+MANIFEST.SKIP
+MYMETA.json
+MYMETA.yml
 README
 test.pl
 VersionInfo.pm
-VersionInfo.xs
+xs/VersionInfo.xs
