@@ -10,7 +10,7 @@ used to be a module by that name that did the same thing
 sometime in 1999. This seems to have vanished off the face of the 
 earth, thus my rewrite from scratch.
 
-INSTALLATION
+# INSTALLATION
 
 To install this module type the following:
 
@@ -19,7 +19,7 @@ To install this module type the following:
    make test
    make install
 
-DEPENDENCIES
+# DEPENDENCIES
 
 The perl module itself has no dependencies. The XS depends on winver.h 
 and version.lib (included with MS Visual C++ and/or the MS Platform SDK).
@@ -27,7 +27,11 @@ As the name implies, this module is only ever meaningful on Win32. The module
 will install and test OK on non-Win32 systems; using it there will result
 in the module croaking.
 
-COPYRIGHT AND LICENCE
+# STATUS
+
+[![Build Status](https://travis-ci.org/brad-mac/Win32-File-VersionInfo.svg?branch=master)](https://travis-ci.org/brad-mac/Win32-File-VersionInfo)
+
+# COPYRIGHT AND LICENCE
 
 Copyright (C) 2003 Alexey Toptygin <alexeyt@cpan.org>
 

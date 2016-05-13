@@ -1,5 +1,8 @@
 Revision history for Perl extension Win32::File::VersionInfo.
 
+        - Changed README to Markdown (README.md)
+        - Added Travis build status to README.md
+
 0.06  Fri May 13 09:06:00 2016
         - Moved XS component out of the root, added conditional compilation
           to avoid build failures on non-Win32 systems.
