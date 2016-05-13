@@ -7,4 +7,3 @@ perl:
   - "5.14"
 os:
   - linux
-  - osx
