@@ -5,6 +5,7 @@ use warnings;
 
 require Exporter;
 require XSLoader;
+use Carp;
 
 our @ISA = qw(Exporter);
 
@@ -12,7 +13,12 @@ our @EXPORT = qw( GetFileVersionInfo );
 our @EXPORT_OK = qw(  );
 
 our $VERSION = '0.05';
-XSLoader::load('Win32::File::VersionInfo', $VERSION);
+if ($^O =~ /cygwin|MSWin32/) {
+  XSLoader::load('Win32::File::VersionInfo', $VERSION);
+}
+else {
+  croak "Win32::File::VersionInfo only works on Cygwin and MS Windows.";
+}
 
 1;
 
@@ -257,8 +263,14 @@ S<"English (United States)">.
 
 Realistically, almost nothing ever uses this information, and the only thing that
 writes it is the linker that created the PE file in the first place. The only
-reason you'd want this information is if you're terminaly curious or you're writing
+reason you'd want this information is if you're terminally curious or you're writing
 an installer. Guess which I was?
+
+=head1 COMPATIBILITY
+
+This module requires the Win32 API; it will install and test without error on non-Win32 
+platforms, but invoking it on a system without the proper API will result in the module
+croaking.
 
 =head1 SEE ALSO
 

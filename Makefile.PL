@@ -11,6 +11,7 @@ WriteMakefile(
     ($^O eq 'cygwin' ?
 	      ('MYEXTLIB' => "/usr/lib/w32api/libversion.a")
 	      : ()),
+    ($^O =~ /cygwin|MSWin32/ ? ('XS' => { 'xs/VersionInfo.xs' => 'xs/VersionInfo.c'}):()),
     'DEFINE'		=> '', # e.g., '-DHAVE_SOMETHING'
 	# Insert -I. if you add *.h files later:
     'INC'		=> '', # e.g., '-I/usr/include/other'
