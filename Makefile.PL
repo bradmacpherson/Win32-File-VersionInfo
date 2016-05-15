@@ -9,8 +9,12 @@ if ( $^O =~ /cygwin|MSWin32/ ) {
 # the contents of the Makefile that is written.
 WriteMakefile(
     'NAME'         => 'Win32::File::VersionInfo',
-    'VERSION_FROM' => 'VersionInfo.pm',            # finds $VERSION
-    'PREREQ_PM'    => {},                          # e.g., Module::Name => 1.1
+    'VERSION_FROM' => 'VersionInfo.pm',             # finds $VERSION
+    'PREREQ_PM'    => {
+        strict   => 0,
+        warnings => 0,
+        Carp     => 0,
+    },    # e.g., Module::Name => 1.1
     (   $] >= 5.005
         ?    ## Add these new keywords supported since 5.005
             (
