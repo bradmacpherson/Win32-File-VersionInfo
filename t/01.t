@@ -28,9 +28,9 @@ if ( $^O =~ /cygwin|MSWin32/ ) {
             subtest "Check $file" => sub {
                 plan tests => scalar @attrs + 1;
                 my $bar = GetFileVersionInfo($file);
-                ok( ref $bar, 'Returned a data structure' );
+                ok( ( ref $bar ), 'Returned a data structure' );
                 for my $attr (@attrs) {
-                    ok( exists $bar->{$attr} and defined $bar->{$attr},
+                    ok( ( exists $bar->{$attr} and defined $bar->{$attr} ),
                         "$attr defined" );
                 }
             };
