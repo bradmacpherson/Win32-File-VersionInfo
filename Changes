@@ -1,5 +1,10 @@
 Revision history for Perl extension Win32::File::VersionInfo.
 
+0.08  Sun May 15 19:22:00 2016
+        - Kwalitee - change Makefile.PL to not be executable.
+        - Kwalitee - add prereqs to Makefile.PL.
+        - Kwalitee - convert test suite to Test::More.
+
 0.07  Fri May 13 19:08:00 2016
         - Changed Makefile.PL to copy the VersionInfo.xs file out of the xs
           directory rather than messing with XS to try and compile it - since

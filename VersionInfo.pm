@@ -12,7 +12,7 @@ our @ISA = qw(Exporter);
 our @EXPORT    = qw( GetFileVersionInfo );
 our @EXPORT_OK = qw(  );
 
-our $VERSION = '0.07';
+our $VERSION = '0.08';
 if ( $^O =~ /cygwin|MSWin32/ ) {
     XSLoader::load( 'Win32::File::VersionInfo', $VERSION );
 }
