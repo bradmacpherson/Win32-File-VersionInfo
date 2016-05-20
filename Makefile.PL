@@ -1,35 +1,26 @@
-use ExtUtils::MakeMaker;
+use ExtUtils::MakeMaker '6.31';
 use File::Copy;
 
 if ( $^O =~ /cygwin|MSWin32/ ) {
     copy 'xs/VersionInfo.xs' => 'VersionInfo.xs';
 }
 
-# See lib/ExtUtils/MakeMaker.pm for details of how to influence
-# the contents of the Makefile that is written.
 WriteMakefile(
     'NAME'         => 'Win32::File::VersionInfo',
-    'VERSION_FROM' => 'VersionInfo.pm',             # finds $VERSION
+    'VERSION_FROM' => 'VersionInfo.pm',
     'PREREQ_PM'    => {
         strict   => 0,
         warnings => 0,
         Carp     => 0,
         perl     => 5.6.0,
-    },    # e.g., Module::Name => 1.1
-    (   $] >= 5.005
-        ?    ## Add these new keywords supported since 5.005
-            (
-            ABSTRACT_FROM => 'VersionInfo.pm', # retrieve abstract from module
-            AUTHOR => 'Alexey Toptygin <alexeyt@cpan.org>'
-            )
+    },
+    'BUILD_REQUIRES' => { 'ExtUtils::MakeMaker' => 6.31, },
+    'ABSTRACT_FROM'  => 'VersionInfo.pm',
+    'AUTHOR'         => 'Alexey Toptygin <alexeyt@cpan.org>',
+    (   $^O eq 'cygwin'
+        ? ( 'MYEXTLIB' => "/usr/lib/w32api/libversion.a" )
         : ()
     ),
-    (   $^O eq 'cygwin' ? ( 'MYEXTLIB' => "/usr/lib/w32api/libversion.a" )
-        : ()
-    ),
-    'DEFINE' => '',   # e.g., '-DHAVE_SOMETHING'
-                      # Insert -I. if you add *.h files later:
-    'INC'    => '',   # e.g., '-I/usr/include/other'
-                      # Un-comment this if you add C files to link with later:
-                      # 'OBJECT'		=> '$(O_FILES)', # link all the C files too
+    'DEFINE' => '',
+    'INC'    => '',
 );
