@@ -17,6 +17,7 @@ WriteMakefile(
     'BUILD_REQUIRES' => { 'ExtUtils::MakeMaker' => 6.31, },
     'ABSTRACT_FROM'  => 'VersionInfo.pm',
     'AUTHOR'         => 'Alexey Toptygin <alexeyt@cpan.org>',
+    'LICENSE'        => 'perl_5',
     (   $^O eq 'cygwin'
         ? ( 'MYEXTLIB' => "/usr/lib/w32api/libversion.a" )
         : ()
