@@ -18,6 +18,16 @@ WriteMakefile(
     'ABSTRACT_FROM'  => 'VersionInfo.pm',
     'AUTHOR'         => 'Alexey Toptygin <alexeyt@cpan.org>',
     'LICENSE'        => 'perl_5',
+    'META_ADD'       => {
+        resources => {
+            license => 'http://dev.perl.org/licenses/artistic.html',
+            repository =>
+                'git@github.com:brad-mac/Win32-File-VersionInfo.git',
+            homepage => 'https://github.com/brad-mac/Win32-File-VersionInfo',
+            bugtracker =>
+                'https://github.com/brad-mac/Win32-File-VersionInfo/issues',
+        },
+    },
     (   $^O eq 'cygwin'
         ? ( 'MYEXTLIB' => "/usr/lib/w32api/libversion.a" )
         : ()
